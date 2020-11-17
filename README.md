@@ -2,7 +2,8 @@
 
 A multi-column theme with a unique card layout. Share your posts with contemporary style. Completely free and fully responsive, released under the MIT license.
 
-**Demo: https://ruby.ghost.io**
+**Origional Ruby Demo: https://ruby.ghost.io**
+** Modified Ruby Demo: https://www.websiteforfreebies.com **
 
 &nbsp;
 
