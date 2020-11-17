@@ -1,0 +1,43 @@
+<header class="site-header">
+    <div class="navbar">
+        <div class="navbar-left">
+            {{> logo}}
+        </div>
+        {{#if @site.navigation}}
+            <nav class="main-menu hidden-xs hidden-sm hidden-md">
+                {{navigation}}
+            </nav>
+        {{/if}}
+        <div class="navbar-right">
+            <div class="social hidden-xs hidden-sm"></div>
+            {{> burger}}
+        </div>
+    </div>
+</header>
+
+{{^is "home"}}
+	<nav class="breadcrumb">
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item"><a href="{{@blog.url}}">Home</a></li>
+		{{#is "page"}}
+			<li class="breadcrumb-item">{{post.title}}</li>
+		{{/is}}
+		{{#is "author"}}
+			<li class="breadcrumb-item"><a href="{{@blog.url}}/about/">about</a></li>
+			<li class="breadcrumb-item">{{author.name}}</li>
+		{{/is}}
+		{{#is "tag"}}
+			<li class="breadcrumb-item">{{tag.name}}</li>
+		{{/is}}
+		{{#is "post"}}{{#post}}{{#primary_tag}}
+			<li class="breadcrumb-item"><a href="{{url absolute="yes"}}">{{name}}</a></li>
+			{{/primary_tag}}
+			<li class="breadcrumb-item">{{title}}</li>
+		{{/post}}{{/is}}
+	</ol>
+	</nav>
+{{/is}}
+
+<style>
+ol .breadcrumb-item{display:inline-block}ol .breadcrumb-item::first-letter{text-transform:uppercase}ol .breadcrumb-item:not(:last-child)::after{content:" >"}
+</style>
